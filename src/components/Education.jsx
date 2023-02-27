@@ -54,3 +54,4 @@ const Education = ({ userInfo, changeData }) => {
   };
   
   export default Education;
+  
