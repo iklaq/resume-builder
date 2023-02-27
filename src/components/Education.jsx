@@ -51,7 +51,5 @@ const Education = ({ userInfo, changeData }) => {
         </form>
       </div>
     );
-  };
-  
-  export default Education;
-  
+ };
+ export default Education;

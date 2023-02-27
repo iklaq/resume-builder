@@ -48,7 +48,5 @@ const Experiences = ({ userInfo, changeData }) => {
         </form>
       </div>
     );
-  };
-  
-  export default Experiences;
-  
+};
+export default Experiences;
