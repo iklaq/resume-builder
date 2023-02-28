@@ -1,4 +1,4 @@
-import InputForm from "./components/Form";
+import Form from "./components/Form";
 
-const App = () => <InputForm />;
+const App = () => <Form />;
 export default App;
