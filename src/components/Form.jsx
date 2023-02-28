@@ -1,16 +1,13 @@
 import React from "react";
+import userData from "../componentData/formData";
 import "../styles/inputForm.css";
-import Education from "./Education";
-import Experiences from "./Experience";
-import GeneralInfo from "./GeneralIfo";
-import Languages from "./Languages";
+import FormInput from "./formInput";
 import Resume from "./resume";
-import Skills from "./Skills";
 
 // In this component eventListners, states  are used
 //  and imported all the input components
 
-const InputForm = () => {
+const Form = () => {
   const [userInfo, changeUserInfo] = React.useState({});
 
   const changeData = (event) =>
@@ -19,23 +16,19 @@ const InputForm = () => {
       [event.target.name]: event.target.value,
     }));
 
+  const formDetails = userData.map((formArray) =>
+    formArray.map((formData) => (
+      <FormInput key={formData.id} {...formData} changeData={changeData} />
+    ))
+  );
+
   return (
     <>
-      <div className="container">
-        <GeneralInfo userInfo={userInfo} changeData={changeData} />
-
-        <Skills userInfo={userInfo} changeData={changeData} />
-
-        <Languages userInfo={userInfo} changeData={changeData} />
-
-        <Experiences  userInfo={userInfo} changeData={changeData} />
-        
-        <Education userInfo={userInfo} changeData={changeData} />
-      </div>
+      <div className="container">{formDetails}</div>
 
       <Resume {...userInfo} />
     </>
   );
 };
 
-export default InputForm;
+export default Form;
